@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+// import Button from './components/UI/Button/Button';
+// import Auth from './containers/Auth/Auth';
+// import Modal from './components/UI/Modal/Modal';
+import {Route, Switch, withRouter} from 'react-router-dom';
+import Navbar from './components/Navigation/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Main from './components/Main/Main';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	let routes = (
+		<Switch>
+			<Route path="/auth"></Route>
+			<Route></Route>
+		</Switch>
+	);
+
+	return (
+		<div className="App">
+			{/* <Button>STUDY</Button>
+			< show={true} modalClosed={() => {}}>
+				<Auth />
+			</
+			Modal> */}
+			<Navbar />
+			{routes}
+			<Main />
+			<Footer />
+		</div>
+	);
 }
 
-export default App;
+export default withRouter(App);

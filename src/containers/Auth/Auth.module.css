@@ -1,0 +1,82 @@
+.Form {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.Form > div {
+	width: 100%;
+}
+
+.Data {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.Title {
+	font-size: 1.5rem;
+	line-height: 300%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.InputWrapper {
+	position: relative;
+}
+
+.Input {
+	font-size: 1rem;
+	line-height: 100%;
+	padding: 0;
+	border: 0;
+	border-bottom: 1px solid black;
+	outline: none;
+	color: black;
+	background-color: #fff;
+	width: 100%;
+}
+
+.LabelDescription {
+	color: #000;
+	background-color: transparent;
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateY(-30px);
+	transition: 0.2s;
+}
+
+.Input::placeholder {
+	color: transparent;
+}
+
+.Input:placeholder-shown ~ .LabelDescription {
+	transform: translateY(0);
+}
+
+.Input:focus ~ .LabelDescription {
+	transform: translateY(-30px);
+}
+.InvalidResponse {
+	line-height: 150%;
+	font-size: 0.75rem;
+
+	/* color: #cc0000; */
+}
+
+.AuthMode {
+	font-size: 1rem;
+	line-height: 300%;
+	text-decoration: underline;
+	padding: 0;
+	margin: 1rem 0 0 0;
+	text-align: center;
+	cursor: pointer;
+}
