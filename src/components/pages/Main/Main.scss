@@ -1,47 +1,29 @@
 @import '../../../scss/sizes.scss';
 
-.Main {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-}
-
-.Left-Side,
-.Right-Side {
-	width: 50%;
-}
-
-.Left-Side {
-	text-align: left;
-	padding-right: 120px;
-}
-
-.Right-Side {
+.RightSide.Methods {
 	display: flex;
 	flex-wrap: wrap;
-	padding-left: 120px;
 	gap: 64px;
 	justify-content: space-between;
 }
-.Right-Side > a {
+.RightSide.Methods > a {
 	display: flex;
 	width: calc(50% - 32px);
 	height: calc(50% - 32px);
 	cursor: pointer;
 }
 
-.Right-Side > a:hover,
-.Right-Side > a > svg:hover {
+.RightSide.Methods > a:hover,
+.RightSide.Methods > a > svg:hover {
 	cursor: pointer;
 }
 
-.Right-Side > a > svg {
+.RightSide.Methods > a > svg {
 	width: 100%;
 	height: 100%;
 }
-.Right-Side .Disabled,
-.Right-Side .Disabled:hover {
+.RightSide.Methods .Disabled,
+.RightSide.Methods .Disabled:hover {
 	cursor: not-allowed;
 	pointer-events: none;
 }
