@@ -73,6 +73,7 @@
 
 .AuthMode {
 	font-size: 1rem;
+	font-weight: 400;
 	line-height: 300%;
 	text-decoration: underline;
 	padding: 0;

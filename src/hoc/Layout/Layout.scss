@@ -1,0 +1,9 @@
+@import '../../scss/sizes.scss';
+
+.Layout {
+	padding: $navbar-height 120px $footer-height 120px;
+	height: 100vh;
+	padding-top: $navbar-height;
+	position: relative;
+	z-index: 0;
+}
