@@ -11,6 +11,9 @@ import FlashcardsHelp from './components/pages/FlashcardsHelp/FlashcardsHelp';
 import Layout from './hoc/Layout/Layout';
 import QuestionsHelp from './components/pages/QuestionsHelp/QuestionsHelp';
 import SpacedRepetitionHelp from './components/pages/SpacedRepetitionHelp/SpacedRepetitionHelp';
+import Flashcards from './components/pages/Flashcards/Flashcards';
+import FlashcardsEditDecks from './containers/FlashcardsEditDecks/FlashcardsEditDecks';
+
 function App() {
 	let routes = (
 		<Switch>
@@ -20,6 +23,8 @@ function App() {
 			<Route path="/flashcards-help" exact component={FlashcardsHelp} />
 			<Route path="/spaced-repetition-help" exact component={SpacedRepetitionHelp} />
 			<Route path="/questions-help" exact component={QuestionsHelp} />
+			<Route path="/flashcards" exact component={Flashcards} />
+			<Route path="/flashcards-edit-decks" exact component={FlashcardsEditDecks} />
 
 			{/* <Redirect to="/" /> */}
 		</Switch>

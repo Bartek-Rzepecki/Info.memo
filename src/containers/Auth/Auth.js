@@ -6,8 +6,6 @@ import {connect} from 'react-redux';
 import Button from '../../components/UI/Button/Button';
 import classes from './Auth.module.css';
 import * as actions from '../../store/actions/auth';
-import axios from 'axios';
-import {updateProfileLink} from '../../shared/endpoints';
 
 const Auth = props => {
 	/* isSignup is switch-state between register and log in form */

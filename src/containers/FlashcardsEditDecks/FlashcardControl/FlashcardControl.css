@@ -1,0 +1,14 @@
+.FlashcardControl {
+	height: 80px;
+	width: 80px;
+	/* 48px is basically 2rem, but this component do not scale ever*/
+	font-size: 48px;
+	text-align: center;
+	line-height: 100%;
+	padding: 0;
+	border: 1px solid black;
+	border-radius: 20px;
+	background-color: white;
+	outline: none;
+	cursor: pointer;
+}

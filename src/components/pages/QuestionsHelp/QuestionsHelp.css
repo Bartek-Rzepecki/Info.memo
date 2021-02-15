@@ -1,0 +1,15 @@
+.QuestionsHelp {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+.QuestionsHelp .RightSide {
+	display: flex;
+	flex-direction: column;
+	row-gap: 40px;
+}
+
+.QuestionsHelp .LeftSide {
+	margin-top: calc(64rem / 24);
+}

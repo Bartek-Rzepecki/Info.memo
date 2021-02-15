@@ -1,0 +1,90 @@
+@import '../../scss/colors.scss';
+.FlashcardsEditDecks {
+	width: 100%;
+	height: 100%;
+	padding: 120px 0;
+	display: flex;
+	flex-direction: row;
+}
+
+.FlashcardsEditDecks .LeftSide,
+.FlashcardsEditDecks .RightSide {
+	height: 100%;
+}
+
+.Decks {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 1px solid black;
+}
+
+.YourDecks {
+	text-align: center;
+}
+
+.DeckList {
+	height: calc(100% - 5rem);
+	overflow-y: scroll;
+}
+
+.YourDecks,
+.DeckItem {
+	padding: 0.25rem 0.75rem;
+	border-bottom: 1px solid black;
+}
+
+.AddDeckLabel {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #575757;
+	border-top: 1px solid black;
+}
+
+.AddDeckText {
+	text-decoration: none;
+	font-style: normal;
+	display: block;
+	height: 2rem;
+	width: 100%;
+	line-height: 2rem;
+}
+
+.AddDeckText::before {
+	content: '+';
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: 900;
+	padding: 4px;
+}
+
+.AddDeckInput {
+	height: 1.5rem;
+	padding: 0;
+	width: 100%;
+	border: 0;
+	border-top: 1px solid black;
+	border-radius: 0;
+	line-height: 1.5rem;
+}
+
+.AddDeckInput:focus {
+	outline: 2px solid $base-blue;
+	border: none;
+}
+
+.FlashcardsEditDecks .RightSide {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	row-gap: 18px;
+}
+
+.FlashcardControls {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}

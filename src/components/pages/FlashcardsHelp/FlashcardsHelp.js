@@ -1,10 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import EmptyFlashcard from '../../UI/Flashcard/EmptyFlashcard/EmptyFlashcard';
 import Button from '../../UI/Button/Button';
 
 import './FlashcardsHelp.scss';
-import {Link} from 'react-router-dom';
-
+import '../../../hoc/Layout/Layout.scss';
 const FlashcardsHelp = props => (
 	<>
 		<div className="LeftSide">
