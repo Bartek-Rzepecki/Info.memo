@@ -6,6 +6,7 @@ import {Redirect, Route, Switch, withRouter} from 'react-router-dom';
 import Navbar from './components/Navigation/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Main from './components/pages/Main/Main';
+import Study from './components/pages/Study/Study';
 import FlashcardsHelp from './components/pages/FlashcardsHelp/FlashcardsHelp';
 import Layout from './hoc/Layout/Layout';
 import QuestionsHelp from './components/pages/QuestionsHelp/QuestionsHelp';
@@ -14,9 +15,8 @@ function App() {
 	let routes = (
 		<Switch>
 			<Route path="/" exact component={Main} />
-			<Route path="/study" exact>
-				<></>
-			</Route>
+			<Route path="/study" exact component={Study} />
+
 			<Route path="/flashcards-help" exact component={FlashcardsHelp} />
 			<Route path="/spaced-repetition-help" exact component={SpacedRepetitionHelp} />
 			<Route path="/questions-help" exact component={QuestionsHelp} />
