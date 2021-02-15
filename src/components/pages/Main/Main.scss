@@ -1,29 +1,9 @@
 @import '../../../scss/sizes.scss';
 
-.RightSide.Methods {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 64px;
-	justify-content: space-between;
-}
-.RightSide.Methods > a {
-	display: flex;
-	width: calc(50% - 32px);
-	height: calc(50% - 32px);
-	cursor: pointer;
+.RightSide .Methods {
+	row-gap: 64px;
 }
 
-.RightSide.Methods > a:hover,
-.RightSide.Methods > a > svg:hover {
-	cursor: pointer;
-}
-
-.RightSide.Methods > a > svg {
-	width: 100%;
-	height: 100%;
-}
-.RightSide.Methods .Disabled,
-.RightSide.Methods .Disabled:hover {
-	cursor: not-allowed;
-	pointer-events: none;
+.RightSide .Methods .Row {
+	column-gap: 64px;
 }

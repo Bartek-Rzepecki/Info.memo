@@ -1,11 +1,8 @@
 import React from 'react';
+import Methods from '../methods/Methods';
 import './Main.scss';
 import '../../../hoc/Layout/Layout.scss';
-import {ReactComponent as Flashcards} from '../../../assets/Flashcards.svg';
-import {ReactComponent as Soon} from '../../../assets/Soon.svg';
-import {ReactComponent as SpacedRepetition} from '../../../assets/SpacedRepetition.svg';
-import {ReactComponent as Questions} from '../../../assets/Questions.svg';
-import {Link, Route, Switch} from 'react-router-dom';
+import '../methods/Methods.scss';
 const Main = props => (
 	<>
 		<div className="LeftSide">
@@ -18,19 +15,8 @@ const Main = props => (
 				proven.
 			</p>
 		</div>
-		<div className="RightSide Methods">
-			<Link to="/flashcards-help">
-				<Flashcards />
-			</Link>
-			<Link to="/" className="Disabled">
-				<Soon className="Disabled" />
-			</Link>
-			<Link to="/spaced-repetition-help">
-				<SpacedRepetition />
-			</Link>
-			<Link to="/questions-help">
-				<Questions />
-			</Link>
+		<div className="RightSide">
+			<Methods />
 		</div>
 	</>
 );
