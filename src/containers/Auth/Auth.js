@@ -15,15 +15,9 @@ const Auth = props => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const isNameCorrect = useMemo(() => {
-		return checkValidity(name, nameRules);
-	}, [name]);
-	const isEmailCorrect = useMemo(() => {
-		return checkValidity(email, emailRules);
-	}, [email]);
-	const isPasswordCorrect = useMemo(() => {
-		return checkValidity(password, passwordRules);
-	}, [password]);
+	const isNameCorrect = useMemo(() => checkValidity(name, nameRules), [name]);
+	const isEmailCorrect = useMemo(() => checkValidity(email, emailRules), [email]);
+	const isPasswordCorrect = useMemo(() => checkValidity(password, passwordRules), [password]);
 
 	const submitHandler = event => {
 		event.preventDefault();

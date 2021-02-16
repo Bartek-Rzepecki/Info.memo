@@ -30,10 +30,40 @@
 
 .YourDecks,
 .DeckItem {
-	padding: 0.25rem 0.75rem;
+	padding: 0.5rem 0.75rem;
 	border-bottom: 1px solid black;
+	line-height: 100%;
+}
+.DeckItem {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.DeckItemsControl {
+	display: flex;
+	flex-direction: row;
+}
+.DeckItemsControl .DeleteDeckItem,
+.DeckItemsControl .ChoseDeckItem {
+	height: 40px;
+	width: 40px;
+	padding: 8px 8px;
+	margin: -8px 0;
+	font-size: 24px;
+	text-align: center;
+	transition: all 0.2s;
 }
 
+.DeckItemsControl .DeleteDeckItem:hover {
+	color: #f00;
+}
+.DeckItemsControl .ChoseDeckItem:hover {
+	color: #555;
+}
+.DeckItemsControl .ChoseDeckItem.ChoseDeckItemActive {
+	color: #555;
+	transform: rotate(90deg);
+}
 .AddDeckLabel {
 	width: 100%;
 	position: absolute;

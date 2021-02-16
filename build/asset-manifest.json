@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.9f6bedca.chunk.css",
-    "main.js": "/static/js/main.0fef3ee8.chunk.js",
-    "main.js.map": "/static/js/main.0fef3ee8.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.aa55292f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.aa55292f.js.map",
-    "static/js/2.a142458d.chunk.js": "/static/js/2.a142458d.chunk.js",
-    "static/js/2.a142458d.chunk.js.map": "/static/js/2.a142458d.chunk.js.map",
-    "static/js/3.93853cf2.chunk.js": "/static/js/3.93853cf2.chunk.js",
-    "static/js/3.93853cf2.chunk.js.map": "/static/js/3.93853cf2.chunk.js.map",
+    "main.css": "/static/css/main.1270f03f.chunk.css",
+    "main.js": "/static/js/main.0dfa9dff.chunk.js",
+    "main.js.map": "/static/js/main.0dfa9dff.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6221c4a4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6221c4a4.js.map",
+    "static/js/2.da7e6ba1.chunk.js": "/static/js/2.da7e6ba1.chunk.js",
+    "static/js/2.da7e6ba1.chunk.js.map": "/static/js/2.da7e6ba1.chunk.js.map",
+    "static/js/3.334872d0.chunk.js": "/static/js/3.334872d0.chunk.js",
+    "static/js/3.334872d0.chunk.js.map": "/static/js/3.334872d0.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.9f6bedca.chunk.css.map": "/static/css/main.9f6bedca.chunk.css.map",
-    "static/js/2.a142458d.chunk.js.LICENSE.txt": "/static/js/2.a142458d.chunk.js.LICENSE.txt",
+    "static/css/main.1270f03f.chunk.css.map": "/static/css/main.1270f03f.chunk.css.map",
+    "static/js/2.da7e6ba1.chunk.js.LICENSE.txt": "/static/js/2.da7e6ba1.chunk.js.LICENSE.txt",
     "static/media/Flashcards.d32365d6.svg": "/static/media/Flashcards.d32365d6.svg",
+    "static/media/QuestionList.bfe1eba5.svg": "/static/media/QuestionList.bfe1eba5.svg",
     "static/media/Questions.6e90f648.svg": "/static/media/Questions.6e90f648.svg",
     "static/media/Soon.08985bfe.svg": "/static/media/Soon.08985bfe.svg",
     "static/media/SpacedRepetition.e011c260.svg": "/static/media/SpacedRepetition.e011c260.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.aa55292f.js",
-    "static/js/2.a142458d.chunk.js",
-    "static/css/main.9f6bedca.chunk.css",
-    "static/js/main.0fef3ee8.chunk.js"
+    "static/js/runtime-main.6221c4a4.js",
+    "static/js/2.da7e6ba1.chunk.js",
+    "static/css/main.1270f03f.chunk.css",
+    "static/js/main.0dfa9dff.chunk.js"
   ]
 }
