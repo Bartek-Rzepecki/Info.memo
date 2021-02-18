@@ -19,10 +19,18 @@ const addDeck = (state, action) => {
 	return {...state, flashcardsDecks: newFlashcardDecks};
 };
 
+const deleteDeck = (state, action) => {
+	let newFlashcardDecks = {...state.flashcardsDecks};
+	delete newFlashcardDecks[action.deckToDelete];
+	return {...state, flashcardsDecks: newFlashcardDecks};
+};
+
 const flashcardsReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case actionTypes.ADD_DECK:
 			return addDeck(state, action);
+		case actionTypes.DELETE_DECK:
+			return deleteDeck(state, action);
 		default:
 			return state;
 	}

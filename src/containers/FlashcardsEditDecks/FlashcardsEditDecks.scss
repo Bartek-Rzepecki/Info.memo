@@ -80,6 +80,7 @@
 	height: 2rem;
 	width: 100%;
 	line-height: 2rem;
+	background-color: white;
 }
 
 .AddDeckText::before {
@@ -88,6 +89,7 @@
 	line-height: inherit;
 	font-weight: 900;
 	padding: 4px;
+	background-color: white;
 }
 
 .AddDeckInput {
