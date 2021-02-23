@@ -11,9 +11,7 @@ const initialState = {
 */
 
 const initialState = {
-	flashcardsDecks: {
-		a: [{front: 'ali', back: 'gator'}],
-	},
+	flashcardsDecks: {},
 };
 
 const addDeck = (state, action) => {
