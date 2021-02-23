@@ -11,7 +11,9 @@ const initialState = {
 */
 
 const initialState = {
-	flashcardsDecks: {},
+	flashcardsDecks: {
+		a: [{front: 'ali', back: 'gator'}],
+	},
 };
 
 const addDeck = (state, action) => {
@@ -25,12 +27,25 @@ const deleteDeck = (state, action) => {
 	return {...state, flashcardsDecks: newFlashcardDecks};
 };
 
+const pushCards = (state, action) => {
+	let newFlashcardDecks = {...state.flashcardsDecks};
+	let deckToChange = newFlashcardDecks[action.deckToModify];
+	deckToChange.push(...action.cardsArray);
+	console.log('pushing is working');
+	return {
+		...state,
+		flashcardsDecks: newFlashcardDecks,
+	};
+};
+
 const flashcardsReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case actionTypes.ADD_DECK:
 			return addDeck(state, action);
 		case actionTypes.DELETE_DECK:
 			return deleteDeck(state, action);
+		case actionTypes.PUSH_CARDS:
+			return pushCards(state, action);
 		default:
 			return state;
 	}

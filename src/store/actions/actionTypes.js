@@ -5,3 +5,4 @@ export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 export const AUTH_SET_NAME = 'AUTH_SET_NAME';
 export const ADD_DECK = 'ADD_DECK';
 export const DELETE_DECK = 'DELETE_DECK';
+export const PUSH_CARDS = 'PUSH_CARDS';

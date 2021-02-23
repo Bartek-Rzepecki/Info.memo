@@ -4,6 +4,7 @@ import {nameRules, emailRules, passwordRules} from '../../shared/dataRules';
 import {connect} from 'react-redux';
 
 import Button from '../../components/UI/Button/Button';
+import Input from '../../components/UI/Input/Input';
 import classes from './Auth.module.css';
 import * as actions from '../../store/actions/auth';
 
@@ -39,60 +40,37 @@ const Auth = props => {
 			<span className={classes.Title}>{!isSignup ? 'Register' : 'Log in'}</span>
 			<span className={classes.Data}>
 				{!isSignup && (
-					<div className={classes.InputWrapper}>
-						<label>
-							<input
-								className={classes.Input}
-								type="text"
-								placeholder="First name"
-								value={name}
-								onChange={event => setName(event.target.value)}
-								required
-							/>
-							<span className={classes.LabelDescription}>First name</span>
-						</label>
-						{!isNameCorrect && name !== '' && (
-							<span className={classes.InvalidResponse}>
-								Provide valid first name
-							</span>
-						)}
-					</div>
+					<Input
+						inputValue={name}
+						setValue={event => setName(event.target.value)}
+						labelDescription="First Name"
+						invalidResponse="Provide valid first name"
+						isInputCorrect={isNameCorrect}
+						inputType="text"
+						isRequired={true}
+					/>
 				)}
-				<div className={classes.InputWrapper}>
-					<label>
-						<input
-							className={classes.Input}
-							type="email"
-							placeholder="Email"
-							value={email}
-							onChange={event => setEmail(event.target.value)}
-							required
-						/>
-						<span className={classes.LabelDescription}>Email</span>
-					</label>
-					{!isEmailCorrect && email !== '' && (
-						<span className={classes.InvalidResponse}>Provide valid email adress</span>
-					)}
-				</div>
-				<div className={classes.InputWrapper}>
-					<label>
-						<input
-							className={classes.Input}
-							type="password"
-							placeholder="Password"
-							value={password}
-							onChange={event => setPassword(event.target.value)}
-							required
-						/>
-						<span className={classes.LabelDescription}>Password</span>
-					</label>
-					{!isPasswordCorrect && password !== '' && (
-						<span className={classes.InvalidResponse}>
-							Correct password contains at least 8 characters, one capital letter, a
-							number and special character
-						</span>
-					)}
-				</div>
+
+				<Input
+					inputValue={email}
+					setValue={event => setEmail(event.target.value)}
+					labelDescription="Email"
+					invalidResponse="Provide valid email adress"
+					isInputCorrect={isEmailCorrect}
+					inputType="email"
+					isRequired={true}
+				/>
+
+				<Input
+					inputValue={password}
+					setValue={event => setPassword(event.target.value)}
+					labelDescription="Password"
+					invalidResponse="Correct password contains at least 8 characters, one capital letter, a
+						number and special character"
+					isInputCorrect={isPasswordCorrect}
+					inputType="password"
+					isRequired={true}
+				/>
 			</span>
 			<span>
 				<Button>{!isSignup ? 'SIGN UP' : 'SIGN IN'}</Button>

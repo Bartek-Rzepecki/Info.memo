@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from './Modal.module.css';
+import './Modal.css';
 import Backdrop from './Backdrop/Backdrop';
 
 //You have to pass a func to a modalClosed prop,this func has to switch the state realted to show prop.
@@ -10,7 +10,7 @@ const Modal = ({show, modalClosed, children}) => {
 		<>
 			<Backdrop show={show} clicked={modalClosed} />
 			<div
-				className={classes.Modal}
+				className="Modal"
 				style={{
 					transform: show ? 'scale(1)' : 'scale(0)',
 					opacity: show ? 1 : 0,

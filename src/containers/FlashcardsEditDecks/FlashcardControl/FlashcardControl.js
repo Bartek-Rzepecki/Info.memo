@@ -1,5 +1,9 @@
 import React from 'react';
 import './FlashcardControl.css';
-const FlashcardControl = ({children}) => <button className="FlashcardControl"> {children}</button>;
+const FlashcardControl = ({children, clicked}) => (
+	<button className="FlashcardControl" onClick={clicked}>
+		{children}
+	</button>
+);
 
 export default FlashcardControl;
