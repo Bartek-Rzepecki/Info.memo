@@ -43,7 +43,6 @@ const FlashcardsEditDecks = props => {
 			setCardsOnList([]);
 
 			if (props.flashcardsDecks[activeDeckName][0]) {
-				console.log(activeDeckName);
 				setActiveCardFront(props.flashcardsDecks[activeDeckName][0].front);
 				setActiveCardBack(props.flashcardsDecks[activeDeckName][0].back);
 			}

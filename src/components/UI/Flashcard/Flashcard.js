@@ -7,7 +7,6 @@ const Flashcard = ({front, back}) => {
 	const [flashcardClassNames, setFlashcardClassNames] = useState('Flashcard');
 	useEffect(() => {
 		if (isCardFlipped) {
-			console.log('clicked');
 			setFlashcardClassNames('Flashcard Flipped');
 		} else {
 			setFlashcardClassNames('Flashcard');
@@ -18,8 +17,6 @@ const Flashcard = ({front, back}) => {
 		<div
 			className="Scene"
 			onClick={() => {
-				console.log('onlick');
-				console.log(isCardFlipped);
 				setIsCardFlipped(!isCardFlipped);
 			}}
 		>

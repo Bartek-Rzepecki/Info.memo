@@ -23,14 +23,11 @@ const Auth = props => {
 	const submitHandler = event => {
 		event.preventDefault();
 		//Is not Signup => register
-		console.log('Submit handler is workingd');
 		if (!isSignup && isNameCorrect && isPasswordCorrect && isEmailCorrect) {
-			console.log('Register!');
 			props.onAuth(email, password, isSignup, name);
 		}
 		// isSignup => login
 		else if (isSignup && isEmailCorrect && isPasswordCorrect) {
-			console.log('User is already signed up, login');
 			props.onAuth(email, password, isSignup);
 		}
 	};

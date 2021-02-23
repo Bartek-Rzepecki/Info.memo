@@ -29,7 +29,6 @@ const pushCards = (state, action) => {
 	let newFlashcardDecks = {...state.flashcardsDecks};
 	let deckToChange = newFlashcardDecks[action.deckToModify];
 	deckToChange.push(...action.cardsArray);
-	console.log('pushing is working');
 	return {
 		...state,
 		flashcardsDecks: newFlashcardDecks,
