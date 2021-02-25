@@ -24,10 +24,21 @@ const FlashcardsEditDecks = props => {
 	//The logical content of decks is stored in the Redux store
 	const [decksArray, setDecksArray] = useState([]);
 
+	useEffect(() => {
+		let tempDecksArray = [...decksArray];
+		console.log('');
+		for (let key in props.flashcardsDecks) {
+			tempDecksArray.push({name: key, isActive: false});
+		}
+
+		setActiveDeckName(tempDecksArray[0].name);
+
+		setDecksArray(tempDecksArray);
+	}, []);
+
 	//update State, and dependent UI when new Active Deck is chosen
 	useEffect(() => {
 		if (activeDeckName != '') {
-			setCardNumber(0);
 			setCardInputFront('');
 			setCardInputBack('');
 			let tempDecksArray = [...decksArray];
@@ -41,6 +52,7 @@ const FlashcardsEditDecks = props => {
 			tempDecksArray[activeDeckIndex] = {name: activeDeckName, isActive: true};
 			setDecksArray(tempDecksArray);
 			setCardsOnList([]);
+			setCardNumber(0);
 
 			if (props.flashcardsDecks[activeDeckName][0]) {
 				setActiveCardFront(props.flashcardsDecks[activeDeckName][0].front);
@@ -110,6 +122,24 @@ const FlashcardsEditDecks = props => {
 		}
 	};
 
+	const deleteCardHandler = () => {
+		if (activeDeckName !== '' && props.flashcardsDecks[activeDeckName].length !== 1) {
+			if (cardNumber === props.flashcardsDecks[activeDeckName].length - 1) {
+				props.onDeleteCard(activeDeckName, cardNumber);
+				setActiveCardFront(props.flashcardsDecks[activeDeckName][cardNumber - 1].front);
+				setActiveCardBack(props.flashcardsDecks[activeDeckName][cardNumber - 1].back);
+				setCardNumber(cardNumber - 1);
+			} else {
+				props.onDeleteCard(activeDeckName, cardNumber);
+
+				setActiveCardFront(props.flashcardsDecks[activeDeckName][cardNumber].front);
+				setActiveCardBack(props.flashcardsDecks[activeDeckName][cardNumber].back);
+			}
+		} else {
+			console.log("you shouldn't  delete the deck this way");
+		}
+	};
+
 	let decks = decksArray.map(deck => (
 		<DeckItem
 			key={deck.name}
@@ -138,8 +168,7 @@ const FlashcardsEditDecks = props => {
 						<label className="AddDeckLabel">
 							<span
 								className="AddDeckText"
-								onClick={event => AddNewDeckHandler(event)}
-							>
+								onClick={event => AddNewDeckHandler(event)}>
 								Add a deck
 							</span>
 							<input
@@ -167,10 +196,9 @@ const FlashcardsEditDecks = props => {
 												props.flashcardsDecks[activeDeckName].length - 1)
 										: (newCardNumber -= 1);
 
-									setCardNumber(cardNumber => newCardNumber);
+									setCardNumber(newCardNumber);
 								}
-							}}
-						>
+							}}>
 							<i className="fas fa-angle-left"></i>
 						</FlashcardControl>
 						<FlashcardControl
@@ -182,23 +210,21 @@ const FlashcardsEditDecks = props => {
 									let newCardNumber =
 										(cardNumber + 1) %
 										props.flashcardsDecks[activeDeckName].length;
-									setCardNumber(cardNumber => newCardNumber);
+									setCardNumber(newCardNumber);
 								}
-							}}
-						>
+							}}>
 							<i className="fas fa-angle-right"></i>
 						</FlashcardControl>
 						<FlashcardControl
 							clicked={() => {
 								if (activeDeckName !== '') setIsAddingCards(state => !state);
-							}}
-						>
+							}}>
 							<i className="fas fa-plus"></i>
 						</FlashcardControl>
 						<FlashcardControl clicked={() => {}}>
 							<i className="fas fa-pen"></i>
 						</FlashcardControl>
-						<FlashcardControl clicked={() => {}}>
+						<FlashcardControl clicked={deleteCardHandler}>
 							<i className="far fa-trash-alt"></i>
 						</FlashcardControl>
 					</span>
@@ -209,8 +235,7 @@ const FlashcardsEditDecks = props => {
 				modalClosed={() => {
 					setIsAddingCards(state => !state);
 					setCardsOnList([]);
-				}}
-			>
+				}}>
 				<div className="AddCardsModal">
 					<span className="AddCardsTitle"> ADD CARDS</span>
 					<div className="AddCardsList">
@@ -239,8 +264,7 @@ const FlashcardsEditDecks = props => {
 						className="AddCardsArray"
 						onClick={() => {
 							PushCardsArrayHandler();
-						}}
-					>
+						}}>
 						<Button>ADD CARDS</Button>
 					</span>
 				</div>
@@ -259,6 +283,7 @@ const mapDispatchToProps = dispatch => {
 		onAddDeck: deckName => dispatch(actions.addDeck(deckName)),
 		onDeleteDeck: deckName => dispatch(actions.deleteDeck(deckName)),
 		onPushingCards: (deckName, cardsArray) => dispatch(actions.pushCards(deckName, cardsArray)),
+		onDeleteCard: (deckName, cardNumber) => dispatch(actions.deleteCard(deckName, cardNumber)),
 	};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(FlashcardsEditDecks);

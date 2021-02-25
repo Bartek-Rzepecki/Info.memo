@@ -1,3 +1,4 @@
+import {act} from 'react-dom/test-utils';
 import {connect} from 'react-redux';
 import * as actionTypes from '../actions/actionTypes';
 
@@ -11,7 +12,16 @@ const initialState = {
 */
 
 const initialState = {
-	flashcardsDecks: {},
+	flashcardsDecks: {
+		animals: [
+			{front: 'gato', back: 'cat'},
+			{front: 'perro', back: 'dog'},
+		],
+		verbs: [
+			{front: 'ser', back: 'to be'},
+			{front: 'comer', back: 'eat'},
+		],
+	},
 };
 
 const addDeck = (state, action) => {
@@ -35,6 +45,17 @@ const pushCards = (state, action) => {
 	};
 };
 
+const deleteCard = (state, action) => {
+	let newFlashcardDecks = {...state.flashcardsDecks};
+	let deckToChange = newFlashcardDecks[action.deckToModify];
+	deckToChange.splice(action.cardToDelete, 1);
+
+	return {
+		...state,
+		flashcardsDecks: newFlashcardDecks,
+	};
+};
+
 const flashcardsReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case actionTypes.ADD_DECK:
@@ -43,6 +64,8 @@ const flashcardsReducer = (state = initialState, action) => {
 			return deleteDeck(state, action);
 		case actionTypes.PUSH_CARDS:
 			return pushCards(state, action);
+		case actionTypes.DELETE_CARD:
+			return deleteCard(state, action);
 		default:
 			return state;
 	}
