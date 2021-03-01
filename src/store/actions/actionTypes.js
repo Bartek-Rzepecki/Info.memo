@@ -7,3 +7,5 @@ export const ADD_DECK = 'ADD_DECK';
 export const DELETE_DECK = 'DELETE_DECK';
 export const PUSH_CARDS = 'PUSH_CARDS';
 export const DELETE_CARD = 'DELETE_CARD';
+export const RETRIEVE_DATA = 'RETRIEVE_DATA';
+export const SAVE_DATA_TO_DB = 'SAVE_DATA_TO_DB';

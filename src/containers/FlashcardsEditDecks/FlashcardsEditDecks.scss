@@ -5,180 +5,201 @@
 	padding: 120px 0;
 	display: flex;
 	flex-direction: row;
-}
 
-.FlashcardsEditDecks .LeftSide,
-.FlashcardsEditDecks .RightSide {
-	height: 100%;
-}
+	.LeftSide,
+	.RightSide {
+		height: 100%;
+	}
 
-.Decks {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	border: 1px solid black;
-}
+	.RightSide {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		row-gap: 18px;
+	}
 
-.YourDecks {
-	text-align: center;
-}
+	.Decks {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border: 1px solid black;
+	}
 
-.DeckList {
-	height: calc(100% - 5rem);
-	overflow-y: scroll;
-}
+	.YourDecks {
+		text-align: center;
+	}
 
-.YourDecks,
-.DeckItem {
-	padding: 0.5rem 0.75rem;
-	border-bottom: 1px solid black;
-	line-height: 100%;
-}
-.DeckItem {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-.DeckItemsControl {
-	display: flex;
-	flex-direction: row;
-}
-.DeckItemsControl .DeleteDeckItem,
-.DeckItemsControl .ChoseDeckItem {
-	height: 40px;
-	width: 40px;
-	padding: 8px 8px;
-	margin: -8px 0;
-	font-size: 24px;
-	text-align: center;
-	transition: all 0.2s;
-}
+	.DeckList {
+		height: calc(100% - 5rem);
+		overflow-y: scroll;
+	}
 
-.DeckItemsControl .DeleteDeckItem:hover {
-	color: #f00;
-}
-.DeckItemsControl .ChoseDeckItem:hover {
-	color: #555;
-}
-.DeckItemsControl .ChoseDeckItem.ChoseDeckItemActive {
-	color: #555;
-	transform: rotate(90deg);
-}
-.AddDeckLabel {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	color: #575757;
-	border-top: 1px solid black;
-}
+	.YourDecks,
+	.DeckItem {
+		padding: 0.5rem 0.75rem;
+		border-bottom: 1px solid black;
+		line-height: 100%;
+	}
+	.DeckItem {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 
-.AddDeckText {
-	text-decoration: none;
-	font-style: normal;
-	display: block;
-	height: 2rem;
-	width: 100%;
-	line-height: 2rem;
-	background-color: white;
-}
+		.DeckName {
+			display: block;
 
-.AddDeckText::before {
-	content: '+';
-	font-size: inherit;
-	line-height: inherit;
-	font-weight: 900;
-	padding: 4px;
-	background-color: white;
-}
+			width: 100%;
+		}
 
-.AddDeckInput {
-	height: 1.5rem;
-	padding: 0;
-	width: 100%;
-	border: 0;
-	border-top: 1px solid black;
-	border-radius: 0;
-	line-height: 1.5rem;
-}
+		.DeckItemsControl {
+			display: flex;
+			flex-direction: row;
+			.DeckStudy {
+				border: 1px solid black;
+				height: 40px;
+				padding: 8px 8px;
+				margin: -8px 0;
+				font-size: 24px;
+			}
+			.DeleteDeckItem,
+			.ChoseDeckItem {
+				height: 40px;
+				width: 40px;
+				padding: 8px 8px;
+				margin: -8px 0;
+				font-size: 24px;
+				text-align: center;
+				transition: all 0.2s;
+			}
 
-.AddDeckInput:focus {
-	outline: 2px solid $base-blue;
-	border: none;
-}
+			.DeleteDeckItem:hover {
+				color: #f00;
+			}
+			.ChoseDeckItem:hover {
+				color: #555;
+			}
+			.ChoseDeckItem.ChoseDeckItemActive {
+				color: #555;
+				transform: rotate(90deg);
+			}
+		}
+	}
+	.AddDeckLabel {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		color: #575757;
+		border-top: 1px solid black;
+	}
 
-.FlashcardsEditDecks .RightSide {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	row-gap: 18px;
-}
+	.AddDeckText {
+		text-decoration: none;
+		font-style: normal;
+		display: block;
+		height: 2rem;
+		width: 100%;
+		line-height: 2rem;
+		background-color: white;
+	}
 
-.FlashcardControls {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 100%;
-}
-.AddCardsModal {
-	display: flex;
-	height: 100%;
-	flex-direction: column;
-	align-items: center;
-}
-.AddCardsTitle {
-	font-size: 1.5rem;
-	line-height: 300%;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	text-align: center;
-}
-.AddCardsList {
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-}
+	.AddDeckText::before {
+		content: '+';
+		font-size: inherit;
+		line-height: inherit;
+		font-weight: 900;
+		padding: 4px;
+		background-color: white;
+	}
 
-.CardItem {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	padding: 0.25rem 0;
-	border-bottom: 1px solid black;
-}
+	.AddDeckInput {
+		height: 1.5rem;
+		padding: 0;
+		width: 100%;
+		border: 0;
+		border-top: 1px solid black;
+		border-radius: 0;
+		line-height: 1.5rem;
+	}
 
-.CardItemText {
-	display: block;
-	width: 50%;
-}
+	.AddDeckInput:focus {
+		outline: 2px solid $base-blue;
+		border: none;
+	}
 
-.AddCardsInput {
-	display: flex;
-	position: relative;
-	margin-top: 2rem;
-	column-gap: 2rem;
-}
-.AddCardsInput > div {
-	width: 50%;
-}
+	.FlashcardsEditDecks .RightSide {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		row-gap: 18px;
+	}
 
-.AddCardsInput .AddCardButton {
-	position: absolute;
-	right: 0;
-	display: block;
-	padding: 4px;
-	font-weight: 900;
-	font-size: inherit;
-	line-height: inherit;
-}
+	.FlashcardControls {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.AddCardsModal {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+	.AddCardsTitle {
+		font-size: 1.5rem;
+		line-height: 300%;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+	}
+	.AddCardsList {
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+	}
 
-.AddCardButton:hover {
-	color: #5b7352;
-}
+	.CardItem {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		padding: 0.25rem 0;
+		border-bottom: 1px solid black;
+	}
 
-.AddCardsArray {
-	//width taken from design
-	width: 480 / (720 - 144) * 100%;
-	padding-bottom: 40px;
+	.CardItemText {
+		display: block;
+		width: 50%;
+	}
+
+	.AddCardsInput {
+		display: flex;
+		position: relative;
+		margin-top: 2rem;
+		column-gap: 2rem;
+	}
+	.AddCardsInput > div {
+		width: 50%;
+	}
+
+	.AddCardsInput .AddCardButton {
+		position: absolute;
+		right: 0;
+		display: block;
+		padding: 4px;
+		font-weight: 900;
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	.AddCardButton:hover {
+		color: #5b7352;
+	}
+
+	.AddCardsArray {
+		//width taken from design
+		width: 480 / (720 - 144) * 100%;
+		padding-bottom: 40px;
+	}
 }

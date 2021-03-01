@@ -5,7 +5,7 @@
 	text-align: center;
 	text-transform: uppercase;
 	color: inherit;
-	height: 120px;
+	/* height: 120px; */
 	width: 100%;
 	padding: 1.5rem;
 	border: 1px solid black;
@@ -13,4 +13,10 @@
 	background-color: white;
 	outline: none;
 	cursor: pointer;
+}
+
+.NotActive {
+	border-radius: 0;
+	cursor: none;
+	pointer-events: none;
 }

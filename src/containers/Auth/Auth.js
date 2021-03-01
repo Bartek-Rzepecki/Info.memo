@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import Button from '../../components/UI/Button/Button';
 import Input from '../../components/UI/Input/Input';
 import classes from './Auth.module.css';
-import * as actions from '../../store/actions/auth';
+import * as actions from '../../store/actions/actions';
 
 const Auth = props => {
 	/* isSignup is switch-state between register and log in form */
@@ -72,9 +72,7 @@ const Auth = props => {
 			<span>
 				<Button>{!isSignup ? 'SIGN UP' : 'SIGN IN'}</Button>
 				<h3 className={classes.AuthMode} onClick={() => setIsSignup(!isSignup)}>
-					{!isSignup
-						? 'Already have an account? Sign in'
-						: 'You don’t have an account yet? Sign up'}
+					{!isSignup ? 'Already have an account? Sign in' : 'You don’t have an account yet? Sign up'}
 				</h3>
 			</span>
 		</form>
@@ -83,8 +81,7 @@ const Auth = props => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onAuth: (email, password, isSignup, name) =>
-			dispatch(actions.auth(email, password, isSignup, name)),
+		onAuth: (email, password, isSignup, name) => dispatch(actions.auth(email, password, isSignup, name)),
 	};
 };
 

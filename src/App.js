@@ -13,7 +13,7 @@ import QuestionsHelp from './components/pages/QuestionsHelp/QuestionsHelp';
 import SpacedRepetitionHelp from './components/pages/SpacedRepetitionHelp/SpacedRepetitionHelp';
 import Flashcards from './components/pages/Flashcards/Flashcards';
 import FlashcardsEditDecks from './containers/FlashcardsEditDecks/FlashcardsEditDecks';
-
+import FlashcardsStudying from './components/pages/FlashcardsStudying/FlashcardsStudying';
 function App() {
 	let routes = (
 		<Switch>
@@ -25,6 +25,7 @@ function App() {
 			<Route path="/questions-help" exact component={QuestionsHelp} />
 			<Route path="/flashcards" exact component={Flashcards} />
 			<Route path="/flashcards-edit-decks" exact component={FlashcardsEditDecks} />
+			<Route path="/flashcards-studying" exact component={FlashcardsStudying} />
 
 			{/* <Redirect to="/" /> */}
 		</Switch>
