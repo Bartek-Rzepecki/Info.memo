@@ -4,7 +4,7 @@ Fancy website, that helps with remembering things.
 
 Live demo: https://info-memo.web.app/
 
-For now it only makes most sense to check it on 1440 x 1024 resolution, because page is in development and RWD was not fully programmed yet.
+For now it makes most sense to check it on 1440 x 1024 resolution, because page is in development and RWD was not fully programmed yet.
 You can use
 admin@admin.com
 Admin123@
